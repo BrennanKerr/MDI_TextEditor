@@ -20,3 +20,7 @@ D:\Durham College\Semester 2\NETD 3202\TextEditor\TextEditor\obj\Debug\TextEdito
 D:\Durham College\Semester 2\NETD 3202\TextEditor\TextEditor\obj\Debug\TextEditor.Resources.resources
 D:\Durham College\Semester 2\NETD 3202\TextEditor\TextEditor\obj\Debug\TextEditor.vbproj.GenerateResource.Cache
 D:\Durham College\Semester 2\NETD 3202\TextEditor\TextEditor\obj\Debug\TextEditor.frmEditor.resources
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\bin\Debug\TextEditor.exe.config
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.exe
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.xml
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.pdb
