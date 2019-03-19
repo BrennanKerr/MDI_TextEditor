@@ -22,5 +22,72 @@ TextEditor
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:TextEditor.frmEditor.Load_FrmEditor(System.Object,System.EventArgs)">
+ <summary>
+ Load_FrmEditor - Saves the assigned number for the class
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.AttemptingToClose(System.Object,System.EventArgs)">
+ <summary>
+ AttemptingToClose - If the user presses 'X', checks to see if any text has been changed
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.AboutApplication(System.Object,System.EventArgs)">
+ <summary>
+ AboutApplication - Displays the information about the application
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.ExitApplication(System.Object,System.EventArgs)">
+ <summary>
+ ExitApplication - Determines if the file can save or not
+					- If text has been edited, go to the SaveFileAs subroutine
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.OpenFile(System.String)">
+ <summary>
+ OpenFile - Open a new file, determined by the user
+ </summary>
+ <param name="newPath">The location of the file on the hard drive</param>
+</member>
+<member name="M:TextEditor.frmEditor.SaveFile(System.Object,System.EventArgs)">
+ <summary>
+ SaveFile - If the file exists, saves it to the current path, otherwise, go to the SaveFileAs() subroutine
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.SaveFileAs(System.Object,System.EventArgs)">
+ <summary>
+ SaveFileAs - Allows the user to pick the location of the file and saves the current text to previousText
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:TextEditor.frmEditor.CheckText">
+ <summary>
+ CheckText - Determines if the text has been changed
+ </summary>
+ <returns>state: boolean - False if text has been changed, true if it has not been motified</returns>
+</member>
+<member name="P:TextEditor.frmEditor.GetPath">
+ <summary>
+ GetPath() - Sets or returns the location of the given file
+ </summary>
+ <returns>path: string - The location of the file</returns>
+</member>
+<member name="P:TextEditor.frmEditor.NumberAssignment">
+ <summary>
+ NumberAssignment - The number assigned to the editor for organizational purposes
+ </summary>
+ <returns>assignedNumber</returns>
+</member>
 </members>
 </doc>

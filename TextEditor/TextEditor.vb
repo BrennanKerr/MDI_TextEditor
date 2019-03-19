@@ -8,27 +8,49 @@ Option Strict On
 Imports System.IO
 
 Public Class frmEditor
-	Dim path As String = "New"
-	Dim previousText As String = ""
+	Dim path As String = ""             ' saves the path of the current file
+	Dim previousText As String = ""     ' saves the previous text of the file (Either when opened or saved)
 	Dim fileRead As FileStream
 	Dim fileWrite As FileStream
-	Dim reader As StreamReader
-	Dim writer As StreamWriter
+	Dim reader As StreamReader          ' steamreader that displays the text
+	Dim writer As StreamWriter          ' streamwriter to save all the text to a given file
+	Dim assignedNumber As Integer       ' the assigned number for the given class
+	Shared counter As Integer           ' the shared number for each instance of TextEditor.vb
 
+	''' <summary>
+	''' Load_FrmEditor - Saves the assigned number for the class
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
 	Private Sub Load_FrmEditor(sender As Object, e As EventArgs) Handles MyBase.Load
-
+		counter += 1
+		assignedNumber = counter
 	End Sub
 
+	''' <summary>
+	''' AttemptingToClose - If the user presses 'X', checks to see if any text has been changed
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
 	Private Sub AttemptingToClose(sender As Object, e As EventArgs) Handles Me.FormClosing
 		ExitApplication(sender, e)
 	End Sub
 
-	' displays the information about the application
-	Private Sub mnuAbout_Click(sender As Object, e As EventArgs)
+	''' <summary>
+	''' AboutApplication - Displays the information about the application
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
+	Private Sub AboutApplication(sender As Object, e As EventArgs)
 		MessageBox.Show("NETD-2202" + vbCrLf + "Lab # 5" + vbCrLf + "Brennan Kerr", "About")
 	End Sub
 
-	' if the user wants to exit the application
+	''' <summary>
+	''' ExitApplication - Determines if the file can save or not
+	'''					- If text has been edited, go to the SaveFileAs subroutine
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
 	Public Sub ExitApplication(sender As Object, e As EventArgs)
 		' checks to see if the text hasnt changed
 		If CheckText() = True Then
@@ -40,7 +62,10 @@ Public Class frmEditor
 		End If
 	End Sub
 
-	' if the user wants to open a file
+	''' <summary>
+	''' OpenFile - Open a new file, determined by the user
+	''' </summary>
+	''' <param name="newPath">The location of the file on the hard drive</param>
 	Public Sub OpenFile(newPath As String)
 		path = newPath
 		fileRead = New FileStream(path, FileMode.Open, FileAccess.ReadWrite)
@@ -55,8 +80,12 @@ Public Class frmEditor
 		Text = "Text Editor: " + path + " Open"
 	End Sub
 
-	' if the user wants to save the file
-	Private Sub SaveFile(sender As Object, e As EventArgs)
+	''' <summary>
+	''' SaveFile - If the file exists, saves it to the current path, otherwise, go to the SaveFileAs() subroutine
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
+	Public Sub SaveFile(sender As Object, e As EventArgs)
 		' if the file already exists
 		If File.Exists(path) Then
 			fileWrite = New FileStream(path, FileMode.Create, FileAccess.Write)
@@ -64,21 +93,30 @@ Public Class frmEditor
 
 			writer.Write(tbInput.Text)
 			writer.Close()
+
+			previousText = tbInput.Text ' saves the previous text to memory
+
+
 			' if the file does not exists (it is a new file), goes to the SaveFileAs method
 		Else
 			SaveFileAs(sender, e)
 		End If
 
-		previousText = tbInput.Text
 	End Sub
 
-	' if the user wants to save the file as something else
-	Private Sub SaveFileAs(sender As Object, e As EventArgs)
+	''' <summary>
+	''' SaveFileAs - Allows the user to pick the location of the file and saves the current text to previousText
+	''' </summary>
+	''' <param name="sender"></param>
+	''' <param name="e"></param>
+	Public Sub SaveFileAs(sender As Object, e As EventArgs)
 		If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
 			path = SaveFileDialog1.FileName
 			My.Computer.FileSystem.WriteAllText(path, tbInput.Text, False)
+			Me.Text = path
 		End If
 
+		' saves the previous text to memory
 		previousText = tbInput.Text
 	End Sub
 
@@ -100,7 +138,10 @@ Public Class frmEditor
 		tbInput.Paste()
 	End Sub
 
-	' if the text has been altered
+	''' <summary>
+	''' CheckText - Determines if the text has been changed
+	''' </summary>
+	''' <returns>state: boolean - False if text has been changed, true if it has not been motified</returns>
 	Private Function CheckText() As Boolean
 		Dim state As Boolean
 
@@ -113,4 +154,30 @@ Public Class frmEditor
 
 		Return state
 	End Function
+
+	''' <summary>
+	''' GetPath() - Sets or returns the location of the given file
+	''' </summary>
+	''' <returns>path: string - The location of the file</returns>
+	Public Property GetPath() As String
+		Get
+			Return path
+		End Get
+		Set(value As String)
+			path = value
+		End Set
+	End Property
+
+	''' <summary>
+	''' NumberAssignment - The number assigned to the editor for organizational purposes
+	''' </summary>
+	''' <returns>assignedNumber</returns>
+	Public Property NumberAssignment() As Integer
+		Get
+			Return assignedNumber
+		End Get
+		Set(value As Integer)
+			assignedNumber = value
+		End Set
+	End Property
 End Class

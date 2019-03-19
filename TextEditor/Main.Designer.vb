@@ -43,14 +43,14 @@ Partial Class frmMain
 		Me.mnuVertical = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuHorizontal = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuAverage = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
 		Me.textToolTip = New System.Windows.Forms.ToolTip(Me.components)
 		Me.mnuButtons = New System.Windows.Forms.ToolStrip()
-		Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-		Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-		Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.mnuBtnNew = New System.Windows.Forms.ToolStripButton()
+		Me.mnuBtnOpen = New System.Windows.Forms.ToolStripButton()
+		Me.mnuBtnSave = New System.Windows.Forms.ToolStripButton()
 		Me.mnControls.SuspendLayout()
 		Me.mnuButtons.SuspendLayout()
 		Me.SuspendLayout()
@@ -77,7 +77,7 @@ Partial Class frmMain
 		Me.mnuNew.Name = "mnuNew"
 		Me.mnuNew.ShortcutKeyDisplayString = "Ctrl-N"
 		Me.mnuNew.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-		Me.mnuNew.Size = New System.Drawing.Size(152, 22)
+		Me.mnuNew.Size = New System.Drawing.Size(143, 22)
 		Me.mnuNew.Text = "&New"
 		Me.mnuNew.ToolTipText = "Create a new file." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by Pressing Alt+F+N or Ctrl+N."
 		'
@@ -86,7 +86,7 @@ Partial Class frmMain
 		Me.mnuOpen.Name = "mnuOpen"
 		Me.mnuOpen.ShortcutKeyDisplayString = "Ctrl-O"
 		Me.mnuOpen.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-		Me.mnuOpen.Size = New System.Drawing.Size(152, 22)
+		Me.mnuOpen.Size = New System.Drawing.Size(143, 22)
 		Me.mnuOpen.Text = "&Open"
 		Me.mnuOpen.ToolTipText = "Open a file." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+O or Ctrl+O."
 		'
@@ -94,7 +94,7 @@ Partial Class frmMain
 		'
 		Me.mnuSave.Name = "mnuSave"
 		Me.mnuSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-		Me.mnuSave.Size = New System.Drawing.Size(152, 22)
+		Me.mnuSave.Size = New System.Drawing.Size(143, 22)
 		Me.mnuSave.Text = "&Save"
 		Me.mnuSave.ToolTipText = "Save the file to its default location." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+S or Ct" &
 	"rl+S."
@@ -102,21 +102,21 @@ Partial Class frmMain
 		'mnuSaveAs
 		'
 		Me.mnuSaveAs.Name = "mnuSaveAs"
-		Me.mnuSaveAs.Size = New System.Drawing.Size(152, 22)
+		Me.mnuSaveAs.Size = New System.Drawing.Size(143, 22)
 		Me.mnuSaveAs.Text = "Save &As"
 		Me.mnuSaveAs.ToolTipText = "Save the file to a different location." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+A."
 		'
 		'mnuClose
 		'
 		Me.mnuClose.Name = "mnuClose"
-		Me.mnuClose.Size = New System.Drawing.Size(152, 22)
+		Me.mnuClose.Size = New System.Drawing.Size(143, 22)
 		Me.mnuClose.Text = "C&lose"
 		'
 		'mnuExit
 		'
 		Me.mnuExit.Name = "mnuExit"
 		Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-		Me.mnuExit.Size = New System.Drawing.Size(152, 22)
+		Me.mnuExit.Size = New System.Drawing.Size(143, 22)
 		Me.mnuExit.Text = "E&xit"
 		Me.mnuExit.ToolTipText = "Close the Application." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+X."
 		'
@@ -200,50 +200,50 @@ Partial Class frmMain
 		Me.mnuAverage.Size = New System.Drawing.Size(173, 22)
 		Me.mnuAverage.Text = "Average &Units Sold"
 		'
+		'ToolStripSeparator1
+		'
+		Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+		Me.ToolStripSeparator1.Size = New System.Drawing.Size(170, 6)
+		'
 		'OpenFileDialog1
 		'
 		Me.OpenFileDialog1.FileName = "OpenFileDialog1"
 		'
 		'mnuButtons
 		'
-		Me.mnuButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3})
+		Me.mnuButtons.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBtnNew, Me.mnuBtnOpen, Me.mnuBtnSave})
 		Me.mnuButtons.Location = New System.Drawing.Point(0, 24)
 		Me.mnuButtons.Name = "mnuButtons"
 		Me.mnuButtons.Size = New System.Drawing.Size(377, 25)
 		Me.mnuButtons.TabIndex = 3
 		Me.mnuButtons.Text = "mnuButtons"
 		'
-		'ToolStripButton1
+		'mnuBtnNew
 		'
-		Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-		Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-		Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-		Me.ToolStripButton1.Name = "ToolStripButton1"
-		Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-		Me.ToolStripButton1.Text = "mnuBtnNew"
+		Me.mnuBtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+		Me.mnuBtnNew.Image = CType(resources.GetObject("mnuBtnNew.Image"), System.Drawing.Image)
+		Me.mnuBtnNew.ImageTransparentColor = System.Drawing.Color.Magenta
+		Me.mnuBtnNew.Name = "mnuBtnNew"
+		Me.mnuBtnNew.Size = New System.Drawing.Size(23, 22)
+		Me.mnuBtnNew.Text = "mnuBtnNew"
 		'
-		'ToolStripButton2
+		'mnuBtnOpen
 		'
-		Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-		Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-		Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-		Me.ToolStripButton2.Name = "ToolStripButton2"
-		Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
-		Me.ToolStripButton2.Text = "mnuBtnOpen"
+		Me.mnuBtnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+		Me.mnuBtnOpen.Image = CType(resources.GetObject("mnuBtnOpen.Image"), System.Drawing.Image)
+		Me.mnuBtnOpen.ImageTransparentColor = System.Drawing.Color.Magenta
+		Me.mnuBtnOpen.Name = "mnuBtnOpen"
+		Me.mnuBtnOpen.Size = New System.Drawing.Size(23, 22)
+		Me.mnuBtnOpen.Text = "mnuBtnOpen"
 		'
-		'ToolStripButton3
+		'mnuBtnSave
 		'
-		Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-		Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-		Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-		Me.ToolStripButton3.Name = "ToolStripButton3"
-		Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
-		Me.ToolStripButton3.Text = "mnuBtnSave"
-		'
-		'ToolStripSeparator1
-		'
-		Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-		Me.ToolStripSeparator1.Size = New System.Drawing.Size(170, 6)
+		Me.mnuBtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+		Me.mnuBtnSave.Image = CType(resources.GetObject("mnuBtnSave.Image"), System.Drawing.Image)
+		Me.mnuBtnSave.ImageTransparentColor = System.Drawing.Color.Magenta
+		Me.mnuBtnSave.Name = "mnuBtnSave"
+		Me.mnuBtnSave.Size = New System.Drawing.Size(23, 22)
+		Me.mnuBtnSave.Text = "mnuBtnSave"
 		'
 		'frmMain
 		'
@@ -255,7 +255,7 @@ Partial Class frmMain
 		Me.IsMdiContainer = True
 		Me.Name = "frmMain"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-		Me.Text = "Main"
+		Me.Text = "M"
 		Me.textToolTip.SetToolTip(Me, "Main Form that holds all the open files.")
 		Me.mnControls.ResumeLayout(False)
 		Me.mnControls.PerformLayout()
@@ -289,8 +289,8 @@ Partial Class frmMain
 	Friend WithEvents SaveFileDialog1 As SaveFileDialog
 	Friend WithEvents textToolTip As ToolTip
 	Friend WithEvents mnuButtons As ToolStrip
-	Friend WithEvents ToolStripButton1 As ToolStripButton
-	Friend WithEvents ToolStripButton2 As ToolStripButton
-	Friend WithEvents ToolStripButton3 As ToolStripButton
+	Friend WithEvents mnuBtnNew As ToolStripButton
+	Friend WithEvents mnuBtnOpen As ToolStripButton
+	Friend WithEvents mnuBtnSave As ToolStripButton
 	Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

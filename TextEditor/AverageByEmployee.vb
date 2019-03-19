@@ -174,4 +174,9 @@ Public Class frmAverage
 		' resets the input label
 		lbInput.Text = "Day 1"
 	End Sub
+
+	' Exits the Application
+	Private Sub ExitApplication(sender As Object, e As EventArgs) Handles btnExit.Click
+		Dispose()
+	End Sub
 End Class
