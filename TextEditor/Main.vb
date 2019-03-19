@@ -13,7 +13,7 @@
 	' opens a new form as frmEditor
 	Private Sub NewFile(sender As Object, e As EventArgs) Handles mnuNew.Click
 		Dim newMDI As frmEditor = New frmEditor
-		newMDI.Text = ""
+		newMDI.Text = "New"
 		newMDI.MdiParent = Me
 		newMDI.Show()
 	End Sub
@@ -35,6 +35,20 @@
 		End If
 	End Sub
 
+	Private Sub CopyActivated(sender As Object, e As EventArgs) Handles mnuCopy.Click
+		Dim activeChild As frmEditor = ActiveMdiChild
+		activeChild.CopyText(sender, e)
+	End Sub
+
+	Private Sub CutActivated(sender As Object, e As EventArgs) Handles mnuCut.Click
+		Dim activeChild As frmEditor = ActiveMdiChild
+		activeChild.CutText(sender, e)
+	End Sub
+
+	Private Sub PasteActivated(sender As Object, e As EventArgs) Handles mnuPaste.Click
+		Dim activeChild As frmEditor = ActiveMdiChild
+		activeChild.PasteText(sender, e)
+	End Sub
 
 	' exits the application
 	Private Sub ExitApplication(sender As Object, e As EventArgs) Handles mnuExit.Click
@@ -46,12 +60,12 @@
 		Me.LayoutMdi(MdiLayout.Cascade)
 	End Sub
 
-	'Makes all the 
+	'Makes all the forms vertically alligned
 	Private Sub VerticalLayout(sender As Object, e As EventArgs) Handles mnuVertical.Click
 		Me.LayoutMdi(MdiLayout.TileVertical)
 	End Sub
 
-	'
+	' Makes all the forms horizontally alligned
 	Private Sub HorizontalLayout(sender As Object, e As EventArgs) Handles mnuHorizontal.Click
 		Me.LayoutMdi(MdiLayout.TileHorizontal)
 	End Sub

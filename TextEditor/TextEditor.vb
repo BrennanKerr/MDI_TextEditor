@@ -8,14 +8,14 @@ Option Strict On
 Imports System.IO
 
 Public Class frmEditor
-	Dim path As String = ""
+	Dim path As String = "New"
 	Dim previousText As String = ""
 	Dim fileRead As FileStream
 	Dim fileWrite As FileStream
 	Dim reader As StreamReader
 	Dim writer As StreamWriter
 
-	Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+	Private Sub Load_FrmEditor(sender As Object, e As EventArgs) Handles MyBase.Load
 
 	End Sub
 
@@ -84,18 +84,18 @@ Public Class frmEditor
 
 
 	' cuts the text
-	Private Sub CutText(sender As Object, e As EventArgs)
+	Public Sub CutText(sender As Object, e As EventArgs)
 		' cuts the text
 		tbInput.Cut()
 	End Sub
 
 	' if the user wants to copy text
-	Private Sub CopyTest(sender As Object, e As EventArgs)
+	Public Sub CopyText(sender As Object, e As EventArgs)
 		tbInput.Copy()
 	End Sub
 
 	' if the user wants to past text
-	Private Sub PasteText(sender As Object, e As EventArgs)
+	Public Sub PasteText(sender As Object, e As EventArgs)
 		' gets the copied text
 		tbInput.Paste()
 	End Sub
@@ -105,7 +105,7 @@ Public Class frmEditor
 		Dim state As Boolean
 
 		' checks to see if the text has been altered
-		If previousText = tbInput.Text And tbInput.Text = "" Then
+		If previousText = tbInput.Text Or (previousText = "" And tbInput.Text = "") Then
 			state = True
 		Else
 			state = False
