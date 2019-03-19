@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmAverage
 	Inherits System.Windows.Forms.Form
 
 	'Form overrides dispose to clean up the component list.
@@ -253,7 +253,7 @@ Partial Class Form1
 		Me.ToolTip1.SetToolTip(Me.tbAvgOne, "Displays the average for the first employee once" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the employee has the maximum nu" &
 		"mber of values" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "entered.")
 		'
-		'Form1
+		'frmAverage
 		'
 		Me.AcceptButton = Me.btnEnter
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,7 +267,7 @@ Partial Class Form1
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
-		Me.Name = "Form1"
+		Me.Name = "frmAverage"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Average Units Shipped By Employee"
 		Me.TableLayoutPanel1.ResumeLayout(False)

@@ -31,4 +31,5 @@ D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\
 D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.frmEditor.resources
 D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.Resources.resources
 D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.vbproj.GenerateResource.Cache
-D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.Form1.resources
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.frmAverage.resources
+D:\Durham College\Semester 2\NETD 3202\Labs\MDI_TextEditor\TextEditor\obj\Debug\TextEditor.Main.resources

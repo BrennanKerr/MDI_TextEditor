@@ -20,12 +20,12 @@ Public Class frmEditor
 	End Sub
 
 	' displays the information about the application
-	Private Sub mnuAbout_Click(sender As Object, e As EventArgs) Handles mnuAbout.Click
+	Private Sub mnuAbout_Click(sender As Object, e As EventArgs)
 		MessageBox.Show("NETD-2202" + vbCrLf + "Lab # 5" + vbCrLf + "Brennan Kerr", "About")
 	End Sub
 
 	' if the user wants to exit the application
-	Private Sub ExitApplication(sender As Object, e As EventArgs) Handles mnuExit.Click
+	Private Sub ExitApplication(sender As Object, e As EventArgs)
 		' checks to see if the text hasnt changed
 		If CheckText() = True Then
 			Close()
@@ -37,7 +37,7 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to open a file
-	Private Sub OpenFile(sender As Object, e As EventArgs) Handles mnuOpen.Click
+	Private Sub OpenFile(sender As Object, e As EventArgs)
 		' checks to see if the file is available
 		If CheckText() = True Then
 			If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
@@ -60,7 +60,7 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to save the file
-	Private Sub SaveFile(sender As Object, e As EventArgs) Handles mnuSave.Click
+	Private Sub SaveFile(sender As Object, e As EventArgs)
 		' if the file already exists
 		If File.Exists(path) Then
 			fileWrite = New FileStream(path, FileMode.Create, FileAccess.Write)
@@ -77,7 +77,7 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to save the file as something else
-	Private Sub SaveFileAs(sender As Object, e As EventArgs) Handles mnuSaveAs.Click
+	Private Sub SaveFileAs(sender As Object, e As EventArgs)
 		If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
 			path = SaveFileDialog1.FileName
 			My.Computer.FileSystem.WriteAllText(path, tbInput.Text, False)
@@ -87,37 +87,37 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to create a new file
-	Private Sub NewFile(sender As Object, e As EventArgs) Handles mnuNew.Click
+	'	Private Sub NewFile(sender As Object, e As EventArgs)
 
-		' checks to see if the text hasn't been changed
-		If CheckText() = True Then
-			' resets the values and removes all text
-			path = ""
-			tbInput.Text = ""
+	' checks to see if the text hasn't been changed
+	'	If CheckText() = True Then
+	'		' resets the values and removes all text
+	'		path = ""
+	'		tbInput.Text = ""
 
-			' changes the title bar
-			Text = "Text Editor: Select a File to Open"
-
-			' if the text has changed
-		Else
-			SaveFileAs(sender, e)
-			NewFile(sender, e)
-		End If
-	End Sub
+	' changes the title bar
+	'		Text = "Text Editor: Select a File to Open"
+	'
+	'		' if the text has changed
+	'	Else
+	'		SaveFileAs(sender, e)
+	'		NewFile(sender, e)
+	'	End If
+	'End Sub
 
 	' cuts the text
-	Private Sub CutText(sender As Object, e As EventArgs) Handles mnuCut.Click
+	Private Sub CutText(sender As Object, e As EventArgs)
 		' cuts the text
 		tbInput.Cut()
 	End Sub
 
 	' if the user wants to copy text
-	Private Sub CopyTest(sender As Object, e As EventArgs) Handles mnuCopy.Click
+	Private Sub CopyTest(sender As Object, e As EventArgs)
 		tbInput.Copy()
 	End Sub
 
 	' if the user wants to past text
-	Private Sub PasteText(sender As Object, e As EventArgs) Handles mnuPaste.Click
+	Private Sub PasteText(sender As Object, e As EventArgs)
 		' gets the copied text
 		tbInput.Paste()
 	End Sub
@@ -136,4 +136,7 @@ Public Class frmEditor
 		Return state
 	End Function
 
+	Private Sub AverageUnitsSoldToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+	End Sub
 End Class

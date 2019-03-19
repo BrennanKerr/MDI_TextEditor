@@ -5,7 +5,7 @@
 
 Option Strict On
 
-Public Class Form1
+Public Class frmAverage
 	' CONSTANTS ----------------------------
 	Const NUM_OF_DAYS As Integer = 7        ' the number of days that will be entered per employee
 	Const NUM_OF_EMPLOYEES As Integer = 3   ' the number of employees that will be entered
