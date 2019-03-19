@@ -1,4 +1,5 @@
-﻿Public Class Main
+﻿Public Class frmMain
+
 	Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 	End Sub
@@ -16,6 +17,7 @@
 		newMDI.Text = "New"
 		newMDI.MdiParent = Me
 		newMDI.Show()
+
 	End Sub
 
 	' displays the information about the application
@@ -68,5 +70,18 @@
 	' Makes all the forms horizontally alligned
 	Private Sub HorizontalLayout(sender As Object, e As EventArgs) Handles mnuHorizontal.Click
 		Me.LayoutMdi(MdiLayout.TileHorizontal)
+	End Sub
+
+	' Closes whichever child is currently active
+	Private Sub CloseActive(sender As Object, e As EventArgs) Handles mnuClose.Click
+		' runs through the ExitApplication method of the frmEditor class if the form is a text editor
+		If TypeOf Me.ActiveMdiChild Is frmEditor Then
+			Dim activeChild As frmEditor = Me.ActiveMdiChild
+			activeChild.ExitApplication(sender, e)
+
+			' simply disposes of the form if it is the AverageByEmployee form
+		Else
+			ActiveMdiChild.Dispose()
+		End If
 	End Sub
 End Class

@@ -29,7 +29,7 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to exit the application
-	Private Sub ExitApplication(sender As Object, e As EventArgs)
+	Public Sub ExitApplication(sender As Object, e As EventArgs)
 		' checks to see if the text hasnt changed
 		If CheckText() = True Then
 			Me.Dispose()
