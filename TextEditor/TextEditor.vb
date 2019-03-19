@@ -32,11 +32,11 @@ Public Class frmEditor
 	Private Sub ExitApplication(sender As Object, e As EventArgs)
 		' checks to see if the text hasnt changed
 		If CheckText() = True Then
-			Close()
+			Me.Dispose()
 			' if the text has changed
 		Else
 			SaveFileAs(sender, e)
-			Close()
+			Me.Dispose()
 		End If
 	End Sub
 
@@ -105,7 +105,7 @@ Public Class frmEditor
 		Dim state As Boolean
 
 		' checks to see if the text has been altered
-		If previousText = tbInput.Text Then
+		If previousText = tbInput.Text And tbInput.Text = "" Then
 			state = True
 		Else
 			state = False

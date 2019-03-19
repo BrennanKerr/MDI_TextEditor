@@ -46,7 +46,7 @@
 		Me.LayoutMdi(MdiLayout.Cascade)
 	End Sub
 
-	'
+	'Makes all the 
 	Private Sub VerticalLayout(sender As Object, e As EventArgs) Handles mnuVertical.Click
 		Me.LayoutMdi(MdiLayout.TileVertical)
 	End Sub
@@ -55,5 +55,4 @@
 	Private Sub HorizontalLayout(sender As Object, e As EventArgs) Handles mnuHorizontal.Click
 		Me.LayoutMdi(MdiLayout.TileHorizontal)
 	End Sub
-
 End Class
