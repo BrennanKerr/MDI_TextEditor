@@ -78,7 +78,6 @@
     <Compile Include="AverageByEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms.vb" />
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>

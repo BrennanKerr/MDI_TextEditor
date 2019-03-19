@@ -19,6 +19,10 @@ Public Class frmEditor
 
 	End Sub
 
+	Private Sub AttemptingToClose(sender As Object, e As EventArgs) Handles Me.FormClosing
+		ExitApplication(sender, e)
+	End Sub
+
 	' displays the information about the application
 	Private Sub mnuAbout_Click(sender As Object, e As EventArgs)
 		MessageBox.Show("NETD-2202" + vbCrLf + "Lab # 5" + vbCrLf + "Brennan Kerr", "About")
@@ -37,26 +41,18 @@ Public Class frmEditor
 	End Sub
 
 	' if the user wants to open a file
-	Private Sub OpenFile(sender As Object, e As EventArgs)
-		' checks to see if the file is available
-		If CheckText() = True Then
-			If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-				path = OpenFileDialog1.FileName
-				fileRead = New FileStream(path, FileMode.Open, FileAccess.ReadWrite)
-				reader = New StreamReader(fileRead)
+	Public Sub OpenFile(newPath As String)
+		path = newPath
+		fileRead = New FileStream(path, FileMode.Open, FileAccess.ReadWrite)
+		reader = New StreamReader(fileRead)
 
-				tbInput.Text = reader.ReadToEnd
+		tbInput.Text = reader.ReadToEnd
 
-				previousText = tbInput.Text
+		previousText = tbInput.Text
 
-				reader.Close()
+		reader.Close()
 
-				Text = "Text Editor: " + path + " Open"
-			End If
-		Else
-			SaveFileAs(sender, e)
-			OpenFile(sender, e)
-		End If
+		Text = "Text Editor: " + path + " Open"
 	End Sub
 
 	' if the user wants to save the file
@@ -86,24 +82,6 @@ Public Class frmEditor
 		previousText = tbInput.Text
 	End Sub
 
-	' if the user wants to create a new file
-	'	Private Sub NewFile(sender As Object, e As EventArgs)
-
-	' checks to see if the text hasn't been changed
-	'	If CheckText() = True Then
-	'		' resets the values and removes all text
-	'		path = ""
-	'		tbInput.Text = ""
-
-	' changes the title bar
-	'		Text = "Text Editor: Select a File to Open"
-	'
-	'		' if the text has changed
-	'	Else
-	'		SaveFileAs(sender, e)
-	'		NewFile(sender, e)
-	'	End If
-	'End Sub
 
 	' cuts the text
 	Private Sub CutText(sender As Object, e As EventArgs)
@@ -135,8 +113,4 @@ Public Class frmEditor
 
 		Return state
 	End Function
-
-	Private Sub AverageUnitsSoldToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-	End Sub
 End Class
