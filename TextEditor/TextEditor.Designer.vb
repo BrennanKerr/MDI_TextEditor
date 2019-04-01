@@ -24,14 +24,10 @@ Partial Class frmEditor
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Me.textToolTip = New System.Windows.Forms.ToolTip(Me.components)
+		Me.tbInput = New System.Windows.Forms.TextBox()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-		Me.tbInput = New System.Windows.Forms.TextBox()
 		Me.SuspendLayout()
-		'
-		'OpenFileDialog1
-		'
-		Me.OpenFileDialog1.FileName = "OpenFileDialog1"
 		'
 		'tbInput
 		'
@@ -44,6 +40,10 @@ Partial Class frmEditor
 		Me.tbInput.TabIndex = 1
 		Me.textToolTip.SetToolTip(Me.tbInput, "Enter text that can be saved.")
 		'
+		'OpenFileDialog1
+		'
+		Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+		'
 		'frmEditor
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -53,7 +53,7 @@ Partial Class frmEditor
 		Me.Controls.Add(Me.tbInput)
 		Me.Name = "frmEditor"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Text Editor: Select a File to Open."
+		Me.Text = "New"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
