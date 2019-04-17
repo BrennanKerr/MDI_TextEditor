@@ -28,22 +28,25 @@ Partial Class frmMain
 		Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuNew = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuOpen = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
 		Me.mnuSave = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuSaveAs = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+		Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
 		Me.mnuClose = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuCopy = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuCut = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuPaste = New System.Windows.Forms.ToolStripMenuItem()
-		Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
-		Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
-		Me.MnuWindows = New System.Windows.Forms.ToolStripMenuItem()
+		Me.mnuWindows = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuCascade = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuVertical = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuHorizontal = New System.Windows.Forms.ToolStripMenuItem()
 		Me.mnuAverage = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+		Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
+		Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
 		Me.textToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -51,14 +54,20 @@ Partial Class frmMain
 		Me.mnuBtnNew = New System.Windows.Forms.ToolStripButton()
 		Me.mnuBtnOpen = New System.Windows.Forms.ToolStripButton()
 		Me.mnuBtnSave = New System.Windows.Forms.ToolStripButton()
+		Me.statusStrip = New System.Windows.Forms.StatusStrip()
+		Me.tsStatus = New System.Windows.Forms.ToolStripStatusLabel()
+		Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+		Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
 		Me.mnControls.SuspendLayout()
 		Me.mnuButtons.SuspendLayout()
+		Me.statusStrip.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'mnControls
 		'
-		Me.mnControls.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuEdit, Me.mnuHelp, Me.MnuWindows})
+		Me.mnControls.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuEdit, Me.mnuWindows, Me.mnuHelp})
 		Me.mnControls.Location = New System.Drawing.Point(0, 0)
+		Me.mnControls.MdiWindowListItem = Me.mnuWindows
 		Me.mnControls.Name = "mnControls"
 		Me.mnControls.Size = New System.Drawing.Size(377, 24)
 		Me.mnControls.TabIndex = 1
@@ -66,7 +75,7 @@ Partial Class frmMain
 		'
 		'mnuFile
 		'
-		Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuOpen, Me.mnuSave, Me.mnuSaveAs, Me.mnuClose, Me.mnuExit})
+		Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuOpen, Me.ToolStripSeparator2, Me.mnuSave, Me.mnuSaveAs, Me.ToolStripSeparator3, Me.ToolStripSeparator4, Me.mnuClose, Me.mnuExit})
 		Me.mnuFile.Name = "mnuFile"
 		Me.mnuFile.Size = New System.Drawing.Size(37, 20)
 		Me.mnuFile.Text = "&File"
@@ -90,6 +99,11 @@ Partial Class frmMain
 		Me.mnuOpen.Text = "&Open"
 		Me.mnuOpen.ToolTipText = "Open a file." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+O or Ctrl+O."
 		'
+		'ToolStripSeparator2
+		'
+		Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+		Me.ToolStripSeparator2.Size = New System.Drawing.Size(140, 6)
+		'
 		'mnuSave
 		'
 		Me.mnuSave.Name = "mnuSave"
@@ -106,23 +120,32 @@ Partial Class frmMain
 		Me.mnuSaveAs.Text = "Save &As"
 		Me.mnuSaveAs.ToolTipText = "Save the file to a different location." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+A."
 		'
+		'ToolStripSeparator3
+		'
+		Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+		Me.ToolStripSeparator3.Size = New System.Drawing.Size(140, 6)
+		'
+		'ToolStripSeparator4
+		'
+		Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+		Me.ToolStripSeparator4.Size = New System.Drawing.Size(140, 6)
+		'
 		'mnuClose
 		'
 		Me.mnuClose.Name = "mnuClose"
-		Me.mnuClose.Size = New System.Drawing.Size(143, 22)
-		Me.mnuClose.Text = "C&lose"
+		Me.mnuClose.Size = New System.Drawing.Size(152, 22)
+		Me.mnuClose.Text = "&Close"
 		'
 		'mnuExit
 		'
 		Me.mnuExit.Name = "mnuExit"
-		Me.mnuExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-		Me.mnuExit.Size = New System.Drawing.Size(143, 22)
+		Me.mnuExit.Size = New System.Drawing.Size(152, 22)
 		Me.mnuExit.Text = "E&xit"
 		Me.mnuExit.ToolTipText = "Close the Application." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+F+X."
 		'
 		'mnuEdit
 		'
-		Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCopy, Me.mnuCut, Me.mnuPaste})
+		Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator6, Me.mnuCopy, Me.mnuCut, Me.mnuPaste, Me.ToolStripSeparator5})
 		Me.mnuEdit.Name = "mnuEdit"
 		Me.mnuEdit.Size = New System.Drawing.Size(39, 20)
 		Me.mnuEdit.Text = "&Edit"
@@ -154,27 +177,12 @@ Partial Class frmMain
 		Me.mnuPaste.ToolTipText = "Paste the text saved to the clipboard." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Can be accessed by pressing Alt+E+P or Ct" &
 	"rl+P."
 		'
-		'mnuHelp
+		'mnuWindows
 		'
-		Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAbout})
-		Me.mnuHelp.Name = "mnuHelp"
-		Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
-		Me.mnuHelp.Text = "&Help"
-		Me.mnuHelp.ToolTipText = "View Help Options."
-		'
-		'mnuAbout
-		'
-		Me.mnuAbout.Name = "mnuAbout"
-		Me.mnuAbout.Size = New System.Drawing.Size(107, 22)
-		Me.mnuAbout.Text = "&About"
-		Me.mnuAbout.ToolTipText = "Learn about the application."
-		'
-		'MnuWindows
-		'
-		Me.MnuWindows.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCascade, Me.mnuVertical, Me.mnuHorizontal, Me.mnuAverage, Me.ToolStripSeparator1})
-		Me.MnuWindows.Name = "MnuWindows"
-		Me.MnuWindows.Size = New System.Drawing.Size(68, 20)
-		Me.MnuWindows.Text = "&Windows"
+		Me.mnuWindows.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCascade, Me.mnuVertical, Me.mnuHorizontal, Me.mnuAverage, Me.ToolStripSeparator1})
+		Me.mnuWindows.Name = "mnuWindows"
+		Me.mnuWindows.Size = New System.Drawing.Size(68, 20)
+		Me.mnuWindows.Text = "&Windows"
 		'
 		'mnuCascade
 		'
@@ -204,6 +212,21 @@ Partial Class frmMain
 		'
 		Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
 		Me.ToolStripSeparator1.Size = New System.Drawing.Size(170, 6)
+		'
+		'mnuHelp
+		'
+		Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAbout})
+		Me.mnuHelp.Name = "mnuHelp"
+		Me.mnuHelp.Size = New System.Drawing.Size(44, 20)
+		Me.mnuHelp.Text = "&Help"
+		Me.mnuHelp.ToolTipText = "View Help Options."
+		'
+		'mnuAbout
+		'
+		Me.mnuAbout.Name = "mnuAbout"
+		Me.mnuAbout.Size = New System.Drawing.Size(107, 22)
+		Me.mnuAbout.Text = "&About"
+		Me.mnuAbout.ToolTipText = "Learn about the application."
 		'
 		'OpenFileDialog1
 		'
@@ -245,22 +268,50 @@ Partial Class frmMain
 		Me.mnuBtnSave.Size = New System.Drawing.Size(23, 22)
 		Me.mnuBtnSave.Text = "mnuBtnSave"
 		'
+		'statusStrip
+		'
+		Me.statusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsStatus})
+		Me.statusStrip.Location = New System.Drawing.Point(0, 301)
+		Me.statusStrip.Name = "statusStrip"
+		Me.statusStrip.Size = New System.Drawing.Size(377, 22)
+		Me.statusStrip.TabIndex = 5
+		Me.statusStrip.Text = "StatusStrip1"
+		'
+		'tsStatus
+		'
+		Me.tsStatus.Name = "tsStatus"
+		Me.tsStatus.Size = New System.Drawing.Size(95, 17)
+		Me.tsStatus.Text = "Status: Welcome"
+		'
+		'ToolStripSeparator5
+		'
+		Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+		Me.ToolStripSeparator5.Size = New System.Drawing.Size(149, 6)
+		'
+		'ToolStripSeparator6
+		'
+		Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+		Me.ToolStripSeparator6.Size = New System.Drawing.Size(149, 6)
+		'
 		'frmMain
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(377, 323)
+		Me.Controls.Add(Me.statusStrip)
 		Me.Controls.Add(Me.mnuButtons)
 		Me.Controls.Add(Me.mnControls)
 		Me.IsMdiContainer = True
 		Me.Name = "frmMain"
-		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-		Me.Text = "M"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+		Me.Text = "MDI Text Editor"
 		Me.textToolTip.SetToolTip(Me, "Main Form that holds all the open files.")
 		Me.mnControls.ResumeLayout(False)
 		Me.mnControls.PerformLayout()
 		Me.mnuButtons.ResumeLayout(False)
 		Me.mnuButtons.PerformLayout()
+		Me.statusStrip.ResumeLayout(False)
+		Me.statusStrip.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -280,7 +331,7 @@ Partial Class frmMain
 	Friend WithEvents mnuPaste As ToolStripMenuItem
 	Friend WithEvents mnuHelp As ToolStripMenuItem
 	Friend WithEvents mnuAbout As ToolStripMenuItem
-	Friend WithEvents MnuWindows As ToolStripMenuItem
+	Friend WithEvents mnuWindows As ToolStripMenuItem
 	Friend WithEvents mnuCascade As ToolStripMenuItem
 	Friend WithEvents mnuVertical As ToolStripMenuItem
 	Friend WithEvents mnuHorizontal As ToolStripMenuItem
@@ -293,4 +344,11 @@ Partial Class frmMain
 	Friend WithEvents mnuBtnOpen As ToolStripButton
 	Friend WithEvents mnuBtnSave As ToolStripButton
 	Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+	Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+	Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+	Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+	Friend WithEvents statusStrip As StatusStrip
+	Friend WithEvents tsStatus As ToolStripStatusLabel
+	Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+	Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
 End Class

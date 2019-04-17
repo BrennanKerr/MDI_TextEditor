@@ -22,13 +22,6 @@ TextEditor
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:TextEditor.frmEditor.Load_FrmEditor(System.Object,System.EventArgs)">
- <summary>
- Load_FrmEditor - Saves the assigned number for the class
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
-</member>
 <member name="M:TextEditor.frmEditor.AttemptingToClose(System.Object,System.EventArgs)">
  <summary>
  AttemptingToClose - If the user presses 'X', checks to see if any text has been changed
@@ -82,12 +75,6 @@ TextEditor
  GetPath() - Sets or returns the location of the given file
  </summary>
  <returns>path: string - The location of the file</returns>
-</member>
-<member name="P:TextEditor.frmEditor.NumberAssignment">
- <summary>
- NumberAssignment - The number assigned to the editor for organizational purposes
- </summary>
- <returns>assignedNumber</returns>
 </member>
 </members>
 </doc>

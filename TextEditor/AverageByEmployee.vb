@@ -177,6 +177,6 @@ Public Class frmAverage
 
 	' Exits the Application
 	Private Sub ExitApplication(sender As Object, e As EventArgs) Handles btnExit.Click
-		Dispose()
+		Close()
 	End Sub
 End Class

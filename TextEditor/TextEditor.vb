@@ -10,22 +10,9 @@ Imports System.IO
 Public Class frmEditor
 	Dim path As String = ""             ' saves the path of the current file
 	Dim previousText As String = ""     ' saves the previous text of the file (Either when opened or saved)
-	Dim fileRead As FileStream
-	Dim fileWrite As FileStream
+	Dim currentFile As FileStream
 	Dim reader As StreamReader          ' steamreader that displays the text
 	Dim writer As StreamWriter          ' streamwriter to save all the text to a given file
-	Dim assignedNumber As Integer       ' the assigned number for the given class
-	Shared counter As Integer           ' the shared number for each instance of TextEditor.vb
-
-	''' <summary>
-	''' Load_FrmEditor - Saves the assigned number for the class
-	''' </summary>
-	''' <param name="sender"></param>
-	''' <param name="e"></param>
-	Private Sub Load_FrmEditor(sender As Object, e As EventArgs) Handles MyBase.Load
-		counter += 1
-		assignedNumber = counter
-	End Sub
 
 	''' <summary>
 	''' AttemptingToClose - If the user presses 'X', checks to see if any text has been changed
@@ -68,8 +55,8 @@ Public Class frmEditor
 	''' <param name="newPath">The location of the file on the hard drive</param>
 	Public Sub OpenFile(newPath As String)
 		path = newPath
-		fileRead = New FileStream(path, FileMode.Open, FileAccess.ReadWrite)
-		reader = New StreamReader(fileRead)
+		currentFile = New FileStream(path, FileMode.Open, FileAccess.ReadWrite)
+		reader = New StreamReader(currentFile)
 
 		tbInput.Text = reader.ReadToEnd
 
@@ -88,8 +75,8 @@ Public Class frmEditor
 	Public Sub SaveFile(sender As Object, e As EventArgs)
 		' if the file already exists
 		If File.Exists(path) Then
-			fileWrite = New FileStream(path, FileMode.Create, FileAccess.Write)
-			writer = New StreamWriter(fileWrite)
+			currentFile = New FileStream(path, FileMode.Create, FileAccess.Write)
+			writer = New StreamWriter(currentFile)
 
 			writer.Write(tbInput.Text)
 			writer.Close()
@@ -121,23 +108,6 @@ Public Class frmEditor
 	End Sub
 
 
-	' cuts the text
-	Public Sub CutText(sender As Object, e As EventArgs)
-		' cuts the text
-		tbInput.Cut()
-	End Sub
-
-	' if the user wants to copy text
-	Public Sub CopyText(sender As Object, e As EventArgs)
-		tbInput.Copy()
-	End Sub
-
-	' if the user wants to past text
-	Public Sub PasteText(sender As Object, e As EventArgs)
-		' gets the copied text
-		tbInput.Paste()
-	End Sub
-
 	''' <summary>
 	''' CheckText - Determines if the text has been changed
 	''' </summary>
@@ -165,19 +135,6 @@ Public Class frmEditor
 		End Get
 		Set(value As String)
 			path = value
-		End Set
-	End Property
-
-	''' <summary>
-	''' NumberAssignment - The number assigned to the editor for organizational purposes
-	''' </summary>
-	''' <returns>assignedNumber</returns>
-	Public Property NumberAssignment() As Integer
-		Get
-			Return assignedNumber
-		End Get
-		Set(value As Integer)
-			assignedNumber = value
 		End Set
 	End Property
 End Class
