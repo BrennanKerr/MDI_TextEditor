@@ -17,9 +17,9 @@ Public Class frmMain
 	' @param	e : EventArgs
 	Private Sub OpenAverageByEmployee(sender As Object, e As EventArgs) Handles mnuAverage.Click
 		Try
-			Dim newMDI As frmAverage = New frmAverage
-			newMDI.MdiParent = Me
-			newMDI.Show()
+			Dim newChild As frmAverage = New frmAverage
+			newChild.MdiParent = Me
+			newChild.Show()
 			tsStatus.Text = "Status: Opening Average By Employee"
 		Catch ex As Exception
 			Console.WriteLine(ex.ToString())
@@ -32,10 +32,10 @@ Public Class frmMain
 	' @param	e : EventArgs
 	Private Sub NewFile(sender As Object, e As EventArgs) Handles mnuNew.Click, mnuBtnNew.Click
 		Try
-			Dim newMDI As frmEditor = New frmEditor
-			newMDI.Text = "New"
-			newMDI.MdiParent = Me
-			newMDI.Show()
+			Dim newChild As frmEditor = New frmEditor
+			newChild.Text = "New"
+			newChild.MdiParent = Me
+			newChild.Show()
 			tsStatus.Text = "Status: Creating new File"
 		Catch ex As Exception
 			Console.WriteLine(ex.ToString())
@@ -60,11 +60,12 @@ Public Class frmMain
 
 		Try
 			If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-				Dim newMDI As frmEditor = New frmEditor
-				newMDI.MdiParent = Me
-				newMDI.OpenFile(OpenFileDialog1.FileName)
+				Dim newChild As frmEditor = New frmEditor
+				newChild.MdiParent = Me
 
-				newMDI.Show()
+				newChild.OpenFile(OpenFileDialog1.FileName)
+
+				newChild.Show()
 				tsStatus.Text = "Status: Opened " + OpenFileDialog1.FileName
 			End If
 		Catch ex As Exception

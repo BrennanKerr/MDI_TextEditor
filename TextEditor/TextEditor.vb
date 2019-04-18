@@ -137,4 +137,8 @@ Public Class frmEditor
 			path = value
 		End Set
 	End Property
+
+	Private Sub frmEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 End Class
